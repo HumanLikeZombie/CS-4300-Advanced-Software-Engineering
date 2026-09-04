@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tiny Dragon Daycare</title>
+    <style>
+        body { font-family: sans-serif; max-width: 720px; margin: 2rem auto; line-height: 1.5; }
+        .card { border: 1px solid #ccc; border-radius: 12px; padding: 1.25rem; }
+        .banner { font-weight: 700; margin-bottom: 1rem; }
+        button { padding: .6rem 1rem; }
+    </style>
+</head>
+<body>
+    <h1>Tiny Dragon Daycare</h1>
+    <div class="card">
+        <div class="banner">{{ banner }}</div>
+        <h2>{{ puff.name }}</h2>
+        <p>Hunger: {{ puff.hunger }}</p>
+        <p>Energy: {{ puff.energy }}</p>
+        <p>Mood: {{ puff.mood }}</p>
+        <p>Status: {{ status }}</p>
+        <form method="post" action="{% url 'feed_puff' puff.id %}">
+            {% csrf_token %}
+            <button type="submit">Feed Puff</button>
+        </form>
+    </div>
+</body>
+</html>
