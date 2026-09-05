@@ -22,8 +22,8 @@ def calculate_priority(importance, urgency):
 
 def filter_active_items(items):
     """Return only dictionaries whose 'active' value is True; do not modify items."""
-    # TODO
-    raise NotImplementedError
+    return [item for item in items if item.get("active") is True]
+    #raise NotImplementedError
 
 
 def summarize_minutes(sessions):
