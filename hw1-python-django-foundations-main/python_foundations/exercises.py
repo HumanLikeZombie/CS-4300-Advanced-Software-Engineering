@@ -28,8 +28,8 @@ def filter_active_items(items):
 
 def summarize_minutes(sessions):
     """Return the total 'minutes' across a list of session dictionaries."""
-    # TODO
-    raise NotImplementedError
+    return sum(session.get("minutes", 0) for session in sessions)
+    #raise NotImplementedError
 
 
 class StudyGoal:
