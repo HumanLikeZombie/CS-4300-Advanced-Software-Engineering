@@ -8,8 +8,8 @@ Run pytest frequently and read failures before changing code.
 
 def normalize_tag(tag):
     """Strip whitespace, lowercase, and replace internal spaces with hyphens."""
-    # TODO
-    raise NotImplementedError
+    return tag.strip().lower().replace(" ", "-")
+    #raise NotImplementedError
 
 
 def calculate_priority(importance, urgency):
