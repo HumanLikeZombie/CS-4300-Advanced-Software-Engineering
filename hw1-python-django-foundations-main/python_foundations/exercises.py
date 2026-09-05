@@ -40,8 +40,9 @@ class StudyGoal:
 
     def log_minutes(self, minutes):
         """Add positive minutes; raise ValueError for zero or negative input."""
-        # TODO
-        raise NotImplementedError
+        if minutes <= 0:
+            raise ValueError("Logged minutes must be a positive integer.")
+        #raise NotImplementedError
 
     def is_complete(self):
         """Return True when completed_minutes has reached target_minutes."""
