@@ -31,6 +31,9 @@
             <article class="card">
                 <strong>{{ session.topic }}</strong><br>
                 <!-- HW1 Part 3: display the new subject here. -->
+                {% if session.subject %}
+                    <span class="session-subject">| Subject: {{ session.subject }}</span>
+                {% endif %}
                 {{ session.duration_minutes }} minutes
             </article>
         {% empty %}

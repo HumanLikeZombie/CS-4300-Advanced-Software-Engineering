@@ -6,6 +6,7 @@ class StudySession(models.Model):
     """A single study session. HW1 Part 3 asks students to add a subject field."""
 
     topic = models.CharField(max_length=150)
+    subject = models.CharField(max_length=200, default="")
     duration_minutes = models.IntegerField()
     completed_on = models.DateField(auto_now_add=True)
 
