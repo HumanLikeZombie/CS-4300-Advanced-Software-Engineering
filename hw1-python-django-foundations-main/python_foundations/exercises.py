@@ -14,8 +14,10 @@ def normalize_tag(tag):
 
 def calculate_priority(importance, urgency):
     """Return importance * urgency; both inputs must be integers from 1 through 5."""
-    # TODO
-    raise NotImplementedError
+    if not (1 <= importance <= 5) or not (1 <= urgency <= 5):
+        raise ValueError("Both importance and urgency must be integers between 1 and 5.")
+    return importance * urgency
+    #raise NotImplementedError
 
 
 def filter_active_items(items):
