@@ -13,8 +13,6 @@ class StudySession(models.Model):
     def clean(self):
         """HW1 Part 4: add validation so negative duration is rejected."""
         # (HW1 Part 4): add validation for negative duration.
-        #pass
-        #duration_minutes = models.PositiveIntegerField(validators=[MinValueValidator(0)])
         super().clean()
         if self.duration_minutes is not None and self.duration_minutes < 0:
             raise ValidationError(
